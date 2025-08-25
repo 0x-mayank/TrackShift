@@ -11,7 +11,7 @@ const Header = () => {
       </div>
       
       <a 
-        href="https://github.com" 
+        href="https://github.com/0x-mayank/TrackShift" 
         target="_blank" 
         rel="noopener noreferrer"
         className="p-3 rounded-lg transition-colors text-2xl"
