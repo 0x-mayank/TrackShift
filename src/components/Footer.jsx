@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="py-6 text-center">
       <p className="text-gray-600 text-sm">
-        Convert your favorite Spotify playlists to YouTube
+        Convert your favorite Spotify playlists to YouTube Playlists
       </p>
     </footer>
   );
