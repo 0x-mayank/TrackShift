@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import ConversionForm from './components/ConversionForm';
 import Features from './components/Features';
 import Footer from './components/Footer';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 const App = () => {
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const renderPage = () => {
+    switch(currentPage) {
+      case 'privacy':
+        return <PrivacyPolicy onBack={() => setCurrentPage('home')} />;
+      default:
+        return (
+          <>
+            <ConversionForm />
+            <Features />
+          </>
+        );
+    }
+  };
+
   return (
     <div className="min-h-screen w-full bg-white relative">
       {/* Emerald Glow Background */}
@@ -18,15 +35,15 @@ const App = () => {
         }}
       />
       
+      {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col">
         <Header />
         <main className="flex-1 px-6">
           <div className="max-w-6xl mx-auto">
-            <ConversionForm />
-            <Features />
+            {renderPage()}
           </div>
         </main>
-        <Footer />
+        <Footer onPrivacyClick={() => setCurrentPage('privacy')} />
       </div>
     </div>
   );
